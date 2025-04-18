@@ -6,7 +6,6 @@ import java.sql.SQLException;
 import java.util.Scanner;
 
 import com.aelec.erp.common.DBcon;
-import com.aelec.erp.common.SessionStorge;
 
 public class EmployeeService {
 	private final Scanner sc;
