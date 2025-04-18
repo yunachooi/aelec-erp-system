@@ -23,13 +23,13 @@ public class StockService {
 	public void getStock() throws ClassNotFoundException, SQLException {
 		System.out.println("상품재고 조회를 시작합니다...");
 
-		List<StockVo> list = new ArrayList<>();
+		List<StockVO> list = new ArrayList<>();
 		String query = "SELECT * FROM stock";
 		pstmt = db.connect().prepareStatement(query);
 		ResultSet rs = pstmt.executeQuery();
 
 		while (rs.next()) {
-			StockVo s = new StockVo();
+			StockVO s = new StockVO();
 
 			s.setP_code(rs.getString("p_code"));
 			s.setS_qty(rs.getInt("s_qty"));
@@ -38,7 +38,7 @@ public class StockService {
 		}
 
 		System.out.println("<< 상품재고 >>");
-		for (StockVo stock : list) {
+		for (StockVO stock : list) {
 			System.out.println(stock);
 		}
 	}
@@ -58,7 +58,7 @@ public class StockService {
 		System.out.println("<< 상품재고 >>");
 		int flag = 0;
 		while (rs.next()) {
-			StockVo s = new StockVo();
+			StockVO s = new StockVO();
 
 			s.setP_code(rs.getString("p_code"));
 			s.setS_qty(rs.getInt("s_qty"));
