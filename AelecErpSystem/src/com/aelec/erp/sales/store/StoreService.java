@@ -89,6 +89,7 @@ public class StoreService {
 					System.out.println("입고 작업 내역서▼");
 					System.out.println(s.toString());
 					break;
+					
 				}
 
 			}
