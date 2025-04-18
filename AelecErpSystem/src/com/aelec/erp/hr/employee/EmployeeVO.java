@@ -3,7 +3,7 @@ package com.aelec.erp.hr.employee;
 import lombok.Data;
 
 @Data
-public class EmployeeVo {
+public class EmployeeVO {
 	private int e_no;
 	private String e_pw;
 	private String e_name;

@@ -18,7 +18,7 @@ public class ProductService {
 
 	/* 상품정보생성 */
 	public void productInfo() throws SQLException, ClassNotFoundException {
-		ProductVo p = new ProductVo();
+		ProductVO p = new ProductVO();
 
 		System.out.print("상품코드를 입력하세요 >> ");
 		p.setP_code(sc.nextLine());
@@ -46,7 +46,7 @@ public class ProductService {
 
 	/* 상품정보수정 */
 	public void updateProductInfo() throws ClassNotFoundException, SQLException {
-		ProductVo p = new ProductVo();
+		ProductVO p = new ProductVO();
 		int ivalue = 0;
 		String svalue = null;
 
