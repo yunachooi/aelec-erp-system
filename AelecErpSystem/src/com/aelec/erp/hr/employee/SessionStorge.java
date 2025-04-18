@@ -1,4 +1,4 @@
-package com.aelec.erp.common;
+package com.aelec.erp.hr.employee;
 
 import java.util.HashMap;
 import java.util.Map;
