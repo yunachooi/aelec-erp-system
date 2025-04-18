@@ -3,7 +3,7 @@ package com.aelec.erp.sales.product;
 import lombok.Data;
 
 @Data
-public class ProductVo {
+public class ProductVO {
 	private String p_code;
 	private String p_name;
 	private int p_cost;

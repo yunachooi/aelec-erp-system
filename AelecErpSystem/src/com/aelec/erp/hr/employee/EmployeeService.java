@@ -20,7 +20,7 @@ public class EmployeeService {
 
 	/* 영업사원정보생성 */
 	public void employeeInfo() throws ClassNotFoundException, SQLException {
-		EmployeeVo e = new EmployeeVo();
+		EmployeeVO e = new EmployeeVO();
 
 		System.out.print("사원번호를 입력하세요 >> ");
 		e.setE_no(sc.nextInt());
@@ -54,7 +54,7 @@ public class EmployeeService {
 
 	/* 영업사원정보수정 */
 	public void updateEmployeeInfo() throws ClassNotFoundException, SQLException {
-		EmployeeVo e = new EmployeeVo();
+		EmployeeVO e = new EmployeeVO();
 		int ivalue = 0;
 		String svalue = null;
 
@@ -105,7 +105,7 @@ public class EmployeeService {
 
 	/* 사원계정로그인 */
 	public void login() throws ClassNotFoundException, SQLException {
-		EmployeeVo e = new EmployeeVo();
+		EmployeeVO e = new EmployeeVO();
 		
 		System.out.print("사원번호를 입력하세요 >> ");
 		int id = sc.nextInt(); sc.nextLine();
