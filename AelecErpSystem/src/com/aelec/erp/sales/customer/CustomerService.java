@@ -49,7 +49,7 @@ public class CustomerService {
 
 	}
 
-	public void checkAllCustomerInfo() throws ClassNotFoundException, SQLException {
+	public void checkAllCustomer() throws ClassNotFoundException, SQLException {
 		CustomerVO c = new CustomerVO();
 		System.out.println("거래처 정보를 조회합니다...");
 
@@ -61,7 +61,7 @@ public class CustomerService {
 			c.setC_code(rs.getString("c_code"));
 			c.setC_name(rs.getString("c_name"));
 			c.setC_ceo(rs.getString("c_ceo"));
-			c.setC_addre(rs.getString("c_addre"));
+			c.setC_addre(rs.getString("c_addr"));
 			c.setC_phone(rs.getString("c_phone"));
 			
 			list.add(c);
