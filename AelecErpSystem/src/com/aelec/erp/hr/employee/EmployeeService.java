@@ -3,6 +3,8 @@ package com.aelec.erp.hr.employee;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 import com.aelec.erp.common.DBcon;
@@ -17,7 +19,65 @@ public class EmployeeService {
 		this.sc = sc;
 		this.db = db;
 	}
+	
+	/* 영업사원정보조회 */
+	public void checkEmployee() throws ClassNotFoundException, SQLException {
+		System.out.println("영업사원정보 조회를 시작합니다...");
+		System.out.println("찾는 영업사원의 이름을 입력하세요 >> ");
+		String name = sc.next();
+		name = "%" + name + "%";
 
+		List<EmployeeVO> list = new ArrayList<>();
+		String query = "SELECT * FROM employee WHERE e_name LIKE ?";
+		pstmt = db.connect().prepareStatement(query);
+		pstmt.setString(1, name);
+		ResultSet rs = pstmt.executeQuery();
+
+		while (rs.next()) {
+			EmployeeVO e = new EmployeeVO();
+
+			e.setE_no(rs.getInt("e_no"));
+			e.setE_name(rs.getString("e_name"));
+			e.setE_pos(rs.getString("e_pos"));
+			e.setE_dept(rs.getString("e_dept"));
+			e.setE_date(rs.getString("e_date"));
+
+			list.add(e);
+		}
+
+		System.out.println("<< 영업사원정보 >>");
+		for (EmployeeVO employee : list) {
+			System.out.println(employee);
+		}
+	}
+	
+	/* 특정영업사원정보조회 */
+	public void checkAllEmployee() throws ClassNotFoundException, SQLException {
+		System.out.println("영업사원정보 조회를 시작합니다...");
+
+		List<EmployeeVO> list = new ArrayList<>();
+		String query = "SELECT * FROM employee";
+		pstmt = db.connect().prepareStatement(query);
+		ResultSet rs = pstmt.executeQuery();
+
+		while (rs.next()) {
+			EmployeeVO e = new EmployeeVO();
+
+			e.setE_no(rs.getInt("e_no"));
+			e.setE_name(rs.getString("e_name"));
+			e.setE_pos(rs.getString("e_pos"));
+			e.setE_dept(rs.getString("e_dept"));
+			e.setE_date(rs.getString("e_date"));
+
+			list.add(e);
+		}
+
+		System.out.println("<< 영업사원정보 >>");
+		for (EmployeeVO employee : list) {
+			System.out.println(employee);
+		}
+	}
+	
 	/* 영업사원정보생성 */
 	public void employeeInfo() throws ClassNotFoundException, SQLException {
 		EmployeeVO e = new EmployeeVO();

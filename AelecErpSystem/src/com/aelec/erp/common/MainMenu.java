@@ -24,8 +24,9 @@ public class MainMenu {
 		boolean flag = true;
 		while(flag) {
 			System.out.println("""
+				======================
 				자재관리시스템 ERP 메뉴
-				1. 거래처 정보 확인
+				1. 신규 거래처 정보
 				2. 거래처 정보 변경
 				3. 상품 정보 확인
 				4. 상품 정보 수정
@@ -33,9 +34,12 @@ public class MainMenu {
 				6. 특정 상품 재고 확인
 				7. 상품 입고 관리
 				8. 상품 출고 관리
-				9. 직원 정보 확인
-				10. 직원 정보 수정
-				11. 종료
+				9. 신규 직원 정보
+				10. 직원 정보 확인
+				11. 특정 직원 확인
+				12. 직원 정보 수정
+				13. 종료
+				======================
 				""");
 			System.out.print("원하는 메뉴를 선택하세요 >> ");
 			int menu = sc.nextInt();sc.nextLine();
@@ -45,11 +49,13 @@ public class MainMenu {
 			case 2 -> cs.customerUpdateInfo();
 			case 3 -> ps.productInfo();
 			case 4 -> ps.updateProductInfo();
-			case 5 -> ss.getStock();
-			case 6 -> ss.getProductStock();
+			case 5 -> ss.checkAllStock();
+			case 6 -> ss.checkStock();
 			case 9 -> es.employeeInfo();
-			case 10 -> es.updateEmployeeInfo();
-			case 11 -> {
+			case 10 -> es.checkAllEmployee();
+			case 11 -> es.checkEmployee();
+			case 12 -> es.updateEmployeeInfo();
+			case 13 -> {
 				System.out.println("자재관리시스템을 종료합니다.");
 				flag = false;
 			}
