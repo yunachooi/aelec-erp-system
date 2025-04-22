@@ -16,7 +16,7 @@ public class StoreService {
 	private final DBcon db;
 	PreparedStatement pstmt;
 
-	StoreService(Scanner sc, DBcon db) {
+	public StoreService(Scanner sc, DBcon db) {
 		this.sc = sc;
 		this.db = db;
 	}

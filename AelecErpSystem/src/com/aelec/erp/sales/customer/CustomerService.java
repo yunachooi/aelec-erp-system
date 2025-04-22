@@ -1,7 +1,9 @@
 package com.aelec.erp.sales.customer;
 
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 import com.aelec.erp.common.DBcon;
@@ -45,6 +47,30 @@ public class CustomerService {
 			System.out.println("입력된 내용 -> " + c.toString());
 		}
 
+	}
+
+	public void checkAllCustomerInfo() throws ClassNotFoundException, SQLException {
+		CustomerVO c = new CustomerVO();
+		System.out.println("거래처 정보를 조회합니다...");
+
+		String query = "SELECT * FROM customer";
+		pstmt = db.connect().prepareStatement(query);
+		ResultSet rs = pstmt.executeQuery();
+		ArrayList<CustomerVO> list = new ArrayList<>();
+		while (rs.next()) {
+			c.setC_code(rs.getString("c_code"));
+			c.setC_name(rs.getString("c_name"));
+			c.setC_ceo(rs.getString("c_ceo"));
+			c.setC_addre(rs.getString("c_addre"));
+			c.setC_phone(rs.getString("c_phone"));
+			
+			list.add(c);
+
+		}
+		System.out.println("거래처 정보▼");
+		for(CustomerVO cvo : list) {
+			System.out.println(cvo);
+		}
 	}
 
 	public void customerUpdateInfo() throws ClassNotFoundException, SQLException {

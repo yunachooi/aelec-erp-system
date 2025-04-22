@@ -5,8 +5,10 @@ import java.util.Scanner;
 
 import com.aelec.erp.hr.employee.EmployeeService;
 import com.aelec.erp.sales.customer.CustomerService;
+import com.aelec.erp.sales.delivery.DeliveryService;
 import com.aelec.erp.sales.product.ProductService;
 import com.aelec.erp.sales.stock.StockService;
+import com.aelec.erp.sales.store.StoreService;
 
 public class MainMenu {
 
@@ -19,6 +21,9 @@ public class MainMenu {
 		ProductService ps = new ProductService(sc, jdbc);
 		StockService ss = new StockService(sc, jdbc);
 		EmployeeService es = new EmployeeService(sc, jdbc);
+		StoreService stos = new StoreService(sc,jdbc);
+		DeliveryService ds = new DeliveryService(sc,jdbc);
+		
 		
 		/* 콘솔에서 메뉴를 보여주고 선택 처리 */
 		boolean flag = true;
