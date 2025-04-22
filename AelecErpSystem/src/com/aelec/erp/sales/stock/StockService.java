@@ -20,7 +20,7 @@ public class StockService {
 	}
 
 	/* 상품재고조회 */
-	public void getStock() throws ClassNotFoundException, SQLException {
+	public void checkAllStock() throws ClassNotFoundException, SQLException {
 		System.out.println("상품재고 조회를 시작합니다...");
 
 		List<StockVO> list = new ArrayList<>();
@@ -44,13 +44,13 @@ public class StockService {
 	}
 
 	/* 특정상품재고조회 */
-	public void getProductStock() throws ClassNotFoundException, SQLException {
+	public void checkStock() throws ClassNotFoundException, SQLException {
 		System.out.println("상품재고 조회를 시작합니다...");
 		System.out.println("찾는 상품의 상품코드를 입력하세요 >> ");
 		String code = sc.next();
 		code = "%" + code + "%";
 
-		String query = "SELECT * FROM stock p_code LIKE ?";
+		String query = "SELECT * FROM stock WHERE p_code LIKE ?";
 		pstmt = db.connect().prepareStatement(query);
 		pstmt.setString(1, code);
 		ResultSet rs = pstmt.executeQuery();
