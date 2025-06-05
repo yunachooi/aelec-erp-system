@@ -1,7 +1,8 @@
 # Aelec ERP System
 
 A전자 전사적 자원 관리(ERP) 시스템 개발 프로젝트 - 자재 관리 모듈  
-(Spring Framework 기반, 추후 웹 UI 및 기능 확장 예정)
+(Spring Framework 기반, 추후 웹 UI 및 기능 확장 예정)<br>
+**프로젝트 기간 : 2025년 04월 18일 ~ 04월 22일**
 
 ---
 
